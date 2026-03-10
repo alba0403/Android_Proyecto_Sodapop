@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/raiz"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/rosafondo"
+    tools:context=".RegistrarActivity">
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/draw_volver_foreground"
+        android:contentDescription="@string/tornar_enrere"
+        android:padding="8dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/titleRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registrat"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/backButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="60dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardRegister"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_max="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="6dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleRegister">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:gravity="center_horizontal">
+            <EditText
+                android:id="@+id/nom_registrat"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:autofillHints="username"
+                android:background="@drawable/edittext_rounded"
+                android:hint="@string/nom"
+                android:textColorHint="@color/gris"
+                android:inputType="text"
+                android:padding="12dp"/>
+
+            <EditText
+                android:id="@+id/cognoms"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:autofillHints="password"
+                android:hint="@string/cognoms"
+                android:textColorHint="@color/gris"
+                android:background="@drawable/edittext_rounded"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/correu"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:autofillHints="password"
+                android:hint="@string/correo_electronic"
+                android:textColorHint="@color/gris"
+                android:background="@drawable/edittext_rounded"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/contrasenya"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:autofillHints="password"
+                android:hint="@string/contrasenya"
+                android:textColorHint="@color/gris"
+                android:background="@drawable/edittext_rounded"
+                android:inputType="textPassword"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                app:cardCornerRadius="24dp"/>
+
+            <EditText
+                android:id="@+id/repetcontrasenya"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:autofillHints="password"
+                android:hint="@string/repeteix_contrasenya"
+                android:textColorHint="@color/gris"
+                android:background="@drawable/edittext_rounded"
+                android:inputType="textPassword"
+                android:padding="12dp"
+                android:textColor="@color/black"/>
+
+            <Button
+                android:id="@+id/CrearCompte"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_marginTop="18dp"
+                android:backgroundTint="@color/rosaboton"
+                android:minHeight="48dp"
+                android:text="@string/crear_compte"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textAllCaps="true"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

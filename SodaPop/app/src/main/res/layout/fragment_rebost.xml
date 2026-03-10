@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentRebost"
+    android:background="@color/rosafondo">
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/draw_volver_foreground"
+        android:contentDescription="@string/tornar_enrere"
+        android:padding="8dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/Rebost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rebost"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/backButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="60dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintTop_toBottomOf="@id/Rebost"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/introduir_aliments"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/editNom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/nom"
+                android:autofillHints="name"
+                android:textColorHint="@color/gris"
+                android:inputType="text"
+                android:padding="12dp"
+                android:background="@drawable/edittext_rounded" />
+
+            <EditText
+                android:id="@+id/editCaducitat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="@string/data_de_caducitat"
+                android:autofillHints="dataCaducidad"
+                android:textColorHint="@color/gris"
+                android:inputType="date"
+                android:padding="12dp"
+                android:background="@drawable/edittext_rounded" />
+
+            <EditText
+                android:id="@+id/editQuantitat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="@string/quantitat"
+                android:inputType="number"
+                android:autofillHints="quantitat"
+                android:textColorHint="@color/gris"
+                android:padding="12dp"
+                android:background="@drawable/edittext_rounded" />
+
+            <Button
+                android:id="@+id/btnConfirmar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:text="@string/aceptar"
+                android:textColor="@color/black"
+                android:backgroundTint="#FF9BB5" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardTabla"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintTop_toBottomOf="@id/card1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tituloTabla"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/taula_d_aliments"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerAliments"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/tituloTabla"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

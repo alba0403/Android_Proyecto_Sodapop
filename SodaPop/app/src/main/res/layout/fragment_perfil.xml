@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultatsActivity"
+    android:background="@color/rosafondo">
+
+    <!-- Header: flecha + título + filtro -->
+    <LinearLayout
+        android:id="@+id/headerResultados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="15dp"
+        >
+
+        <ImageView
+            android:id="@+id/resultats_backbutton"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/draw_volver_foreground"
+            android:contentDescription="@string/boton_parar_volver_atras">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/textheader"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="30sp"
+            android:text="@string/perfil"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp">
+        </TextView>
+
+        <ImageView
+            android:id="@+id/edit"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/edit_3_svgrepo_com"
+            android:layout_marginStart="80dp"
+            android:contentDescription="@string/filtrar">
+        </ImageView>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/config_svgrepo_com"
+            android:layout_marginStart="1dp"
+            android:contentDescription="@string/filtrar">
+        </ImageView>
+    </LinearLayout>
+
+    <!-- FOTO PERFIL-->
+    <ImageView
+        android:id="@+id/foto_perfil"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/draw_perfil"
+        app:layout_constraintTop_toBottomOf="@+id/headerResultados"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/boton_parar_volver_atras">
+    </ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/foto_perfil"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/titleDades"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dades"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <View
+            android:id="@+id/lineaVisual"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/gris"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintTop_toBottomOf="@id/headerResultados"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"/>
+
+        <TextView
+            android:id="@+id/nomUsuari"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nomusuari"
+            android:layout_marginTop="10dp"/>
+
+        <!-- Correo -->
+        <TextView
+            android:id="@+id/correu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/correo_electronic"
+            android:layout_marginTop="6dp"/>
+
+        <TextView
+            android:id="@+id/dataNaixement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dataNaix"
+            android:layout_marginTop="6dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
+
+        <TextView
+            android:id="@+id/titlePreferencies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Preferències"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <View
+            android:id="@+id/lineaVisual2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/gris"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintTop_toBottomOf="@id/headerResultados"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"/>
+
+        <TextView
+            android:id="@+id/dieta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dieta"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/alergies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/allergies"
+            android:layout_marginTop="6dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
+
+        <Button
+            android:id="@+id/btnLesMevesReceptes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/LesMevesReceptes"
+            android:backgroundTint="@color/rosaboton"
+            android:padding="14dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
