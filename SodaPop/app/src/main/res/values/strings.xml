@@ -56,4 +56,7 @@
     <string name="Preferències">Preferències</string>
     <string name="nomusuari">Nom d\'usuari</string>
     <string name="dades">Dades</string>
+    <string name="afegir">Afegir</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="buscar_recepta">Buscar recepta...</string>
 </resources>
