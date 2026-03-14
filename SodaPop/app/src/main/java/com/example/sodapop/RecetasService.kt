@@ -4,15 +4,15 @@ import retrofit2.Response
 import retrofit2.http.*
 
 interface RecetasService {
-    @GET("receptes/")
+    @GET("api/recetas")
     suspend fun llistaReceptes(): Response<List<Receta>>
 
-    @DELETE("receptes/{id}")
+    @DELETE("api/recetas/{id}")
     suspend fun eliminarRecepta(
         @Path("id") id: Long
     ): Response<Unit>
 
-    @POST("receptes/")
+    @POST("api/recetas")
     suspend fun crearRecepta(
         @Body receta: NuevaRecetaRequest
     ): Response<Receta>

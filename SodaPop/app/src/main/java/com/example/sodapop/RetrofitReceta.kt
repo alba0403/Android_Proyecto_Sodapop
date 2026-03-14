@@ -17,8 +17,8 @@ class RetrofitReceta {
                     .create()
 
                 mItemAPI = Retrofit.Builder()
+                    .baseUrl("http://129.80.23.224:8080/")//.baseUrl("https://oracleitic.mooo.com/") url de la api en aplication.properties
                     .addConverterFactory(GsonConverterFactory.create(gsondateformat))
-                    //.baseUrl("https://oracleitic.mooo.com/") url de la api en aplication.properties
                     .build()
                     .create(RecetasService::class.java)
             }

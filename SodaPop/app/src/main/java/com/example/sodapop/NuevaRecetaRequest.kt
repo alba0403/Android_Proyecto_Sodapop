@@ -2,9 +2,9 @@ package com.example.sodapop
 
 data class NuevaRecetaRequest(
     val nombre: String,
-    val foto: String = "https://tudominio.com/default.jpg", // URL fija, no drawable
-    val nivelDificultad: String = "Fàcil",
-    val tiempoEstimado: Int = 0,
-    val descripcion: String = "",
+    val foto: String = "https://misrecetas.com/default.jpg",
+    val nivelDificultad: String = "Media",   // debe ser "Baja", "Media" o "Alta"
+    val tiempoEstimado: Int = 30,            // debe ser > 0
+    val descripcion: String = "Sin descripción",  // no puede estar vacía
     val guardada: Boolean = true
 )

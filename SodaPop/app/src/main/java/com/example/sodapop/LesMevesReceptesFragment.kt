@@ -22,7 +22,7 @@ class LesMevesReceptesFragment : Fragment() {
     private lateinit var botonEliminar: Button
 
     private val mesMevesRecetas = mutableListOf<Receta>()
-    private var recetaSeleccionada: Receta? = null
+    private val todasLasRecetas = mutableListOf<Receta>() // llista completa per el filtre
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,6 +48,24 @@ class LesMevesReceptesFragment : Fragment() {
 
         cargarMisRecetas()
 
+        // FILTRO en tiempo real mientras escribes
+        buscadorReceptes.addTextChangedListener(object : android.text.TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun afterTextChanged(s: android.text.Editable?) {
+                val texto = s.toString().trim().lowercase()
+                mesMevesRecetas.clear()
+                if (texto.isEmpty()) {
+                    mesMevesRecetas.addAll(todasLasRecetas)
+                } else {
+                    mesMevesRecetas.addAll(
+                        todasLasRecetas.filter { it.nombre.lowercase().contains(texto) }
+                    )
+                }
+                adapter.notifyDataSetChanged()
+            }
+        })
+
         // AFEGIR
         botonAñadir.setOnClickListener {
             val nombre = buscadorReceptes.text.toString().trim()
@@ -63,6 +81,7 @@ class LesMevesReceptesFragment : Fragment() {
                     val response = RetrofitReceta.API().crearRecepta(nuevaReceta)
                     if (response.isSuccessful) {
                         response.body()?.let { creada ->
+                            todasLasRecetas.add(creada)
                             mesMevesRecetas.add(creada)
                             adapter.notifyItemInserted(mesMevesRecetas.size - 1)
                             buscadorReceptes.text.clear()
@@ -88,6 +107,7 @@ class LesMevesReceptesFragment : Fragment() {
                 try {
                     val response = RetrofitReceta.API().eliminarRecepta(recetaSeleccionada!!.id)
                     if (response.isSuccessful) {
+                        todasLasRecetas.remove(recetaSeleccionada) // ← eliminar también de la lista completa
                         val index = mesMevesRecetas.indexOf(recetaSeleccionada)
                         mesMevesRecetas.removeAt(index)
                         recetaSeleccionada = null
@@ -103,12 +123,16 @@ class LesMevesReceptesFragment : Fragment() {
         }
     }
 
+    private var recetaSeleccionada: Receta? = null
+
     private fun cargarMisRecetas() {
         lifecycleScope.launch {
             try {
                 val response = RetrofitReceta.API().llistaReceptes()
                 if (response.isSuccessful) {
                     response.body()?.let { lista ->
+                        todasLasRecetas.clear()
+                        todasLasRecetas.addAll(lista)
                         mesMevesRecetas.clear()
                         mesMevesRecetas.addAll(lista)
                         adapter.notifyDataSetChanged()
