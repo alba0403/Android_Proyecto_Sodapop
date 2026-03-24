@@ -1,6 +1,5 @@
 package com.example.sodapop
 
-// Este NO lo tocas — es el que te dijo tu profe
 data class Receta(
     val id: Long,
     val nombre: String,

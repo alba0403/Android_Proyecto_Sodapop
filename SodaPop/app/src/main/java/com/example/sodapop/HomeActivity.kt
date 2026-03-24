@@ -1,5 +1,6 @@
 package com.example.sodapop
 
+import GraficsFragment
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -73,6 +74,7 @@ class HomeActivity : AppCompatActivity() {
                 R.id.nav_lesmevesreceptes -> LesMevesReceptesFragment()
                 R.id.nav_perfil -> PerfilFragment()
                 R.id.nav_rebost -> FragmentRebost()
+                R.id.nav_grafics -> GraficsFragment()
                 else -> null
             }
 

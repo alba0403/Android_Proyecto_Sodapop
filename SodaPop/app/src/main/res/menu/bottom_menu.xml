@@ -16,4 +16,9 @@
         android:icon="@drawable/draw_rebost"
         android:title="Rebost" />
 
+    <item
+        android:id="@+id/nav_grafics"
+        android:icon="@drawable/baseline_bar_chart_24"
+        android:title="Gráficos" />
+
 </menu>
