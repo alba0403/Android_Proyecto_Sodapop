@@ -1,5 +1,6 @@
 package com.example.sodapop
 
+import GraficsFragment
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -11,6 +12,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +45,7 @@ class HomeActivity : AppCompatActivity() {
         val recycler = findViewById<RecyclerView>(R.id.recyclerRecomendadas)
         recycler.layoutManager = LinearLayoutManager(this)
 
-        val recetasRecomendadas = DataSource.recetas.take(3)
+        val recetasRecomendadas = mutableListOf<Receta>()
 
         val adapter = RecetaAdapter(recetasRecomendadas) { receta ->
             Toast.makeText(this, "Recomendada: ${receta.nombre}", Toast.LENGTH_SHORT).show()
@@ -50,6 +53,19 @@ class HomeActivity : AppCompatActivity() {
 
         recycler.adapter = adapter
 
+        lifecycleScope.launch {
+            try {
+                val response = RetrofitReceta.API().llistaReceptes()
+                if (response.isSuccessful) {
+                    response.body()?.let { lista ->
+                        recetasRecomendadas.addAll(lista.take(3))
+                        adapter.notifyDataSetChanged()
+                    }
+                }
+            } catch (e: Exception) {
+                Toast.makeText(this@HomeActivity, "Error de connexió", Toast.LENGTH_SHORT).show()
+            }
+        }
         //Menu navigation
         val bottomNav: BottomNavigationView = findViewById(R.id.bottomNav)
 
@@ -58,6 +74,7 @@ class HomeActivity : AppCompatActivity() {
                 R.id.nav_lesmevesreceptes -> LesMevesReceptesFragment()
                 R.id.nav_perfil -> PerfilFragment()
                 R.id.nav_rebost -> FragmentRebost()
+                R.id.nav_grafics -> GraficsFragment()
                 else -> null
             }
 

@@ -17,19 +17,19 @@
     <string name="receptes_recomanades">Receptes recomanades</string>
     <string name="filtrar">Filtrar</string>
     <string name="tiempo">1h</string>
-    <string name="nom_recepta">Nombre de la receta</string>
+    <string name="nom_recepta">Nom de la recepta</string>
     <string name="escriu_ingredients">Escriu el nom dels ingredients</string>
     <string name="buscar_receptes">Buscar receptes</string>
     <string name="ingredientes_seleccionados">Ingredients seleccionats</string>
     <string name="ingredientes">Ingredients:</string>
     <string name="passes">Passes:</string>
-    <string name="ingrediente1">ingrediente1</string>
-    <string name="passo1">Passo1</string>
+    <string name="ingrediente1">ingredient1</string>
+    <string name="passo1">Pas1</string>
     <string name="rebost">Rebost</string>
     <string name="introduir_aliments">Introduir aliments</string>
     <string name="data_de_caducitat">Data de caducitat</string>
     <string name="quantitat">Quantitat</string>
-    <string name="aceptar">Aceptar</string>
+    <string name="aceptar">Acceptar</string>
     <string name="taula_d_aliments">Taula d\'aliments</string>
     <string name="data">Data</string>
     <string name="boton_parar_volver_atras" />
@@ -56,4 +56,7 @@
     <string name="Preferències">Preferències</string>
     <string name="nomusuari">Nom d\'usuari</string>
     <string name="dades">Dades</string>
+    <string name="afegir">Afegir</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="buscar_recepta">Buscar recepta...</string>
 </resources>
