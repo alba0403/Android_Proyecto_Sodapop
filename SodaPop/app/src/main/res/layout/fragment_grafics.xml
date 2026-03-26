@@ -18,7 +18,6 @@
             android:textStyle="bold"
             android:layout_marginBottom="12dp"/>
 
-        <!-- CO2 -->
         <TextView
             android:id="@+id/tvCO2"
             android:layout_width="match_parent"
@@ -29,7 +28,6 @@
             android:layout_marginBottom="16dp"
             android:text="🌱 CO₂: calculant..."/>
 
-        <!-- Bar Chart: entrades al fragment -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -43,7 +41,6 @@
             android:layout_height="220dp"
             android:layout_marginBottom="16dp"/>
 
-        <!-- Pie Chart: afegides vs eliminades -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,7 +54,6 @@
             android:layout_height="280dp"
             android:layout_marginBottom="16dp"/>
 
-        <!-- Line Chart: minuts d'ús -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
