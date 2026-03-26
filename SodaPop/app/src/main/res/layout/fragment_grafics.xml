@@ -1,40 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/rosafondo">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="vertical">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Usos de la app"
-            android:textSize="18sp"
+            android:text="Estadístiques"
+            android:textSize="28sp"
             android:textStyle="bold"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="12dp"/>
+
+        <!-- CO2 -->
+        <TextView
+            android:id="@+id/tvCO2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:textSize="15sp"
+            android:background="#E8F5E9"
+            android:layout_marginBottom="16dp"
+            android:text="🌱 CO₂: calculant..."/>
+
+        <!-- Bar Chart: entrades al fragment -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Entrades a Les Meves Receptes"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
 
         <com.github.mikephil.charting.charts.BarChart
             android:id="@+id/barChart"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_marginBottom="24dp"/>
+            android:layout_height="220dp"
+            android:layout_marginBottom="16dp"/>
 
+        <!-- Pie Chart: afegides vs eliminades -->
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Distribución de acciones"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp"/>
+            android:text="Receptes afegides vs eliminades"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
 
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/pieChart"
             android:layout_width="match_parent"
-            android:layout_height="300dp"/>
+            android:layout_height="280dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Line Chart: minuts d'ús -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Minuts d'ús acumulats"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lineChart"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginBottom="24dp"/>
 
     </LinearLayout>
 </ScrollView>

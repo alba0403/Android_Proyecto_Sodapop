@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("kotlin-parcelize")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -61,5 +62,11 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
-    implementation("androidx.datastore:datastore-preferences:1.1.1")
+    // Firebase BoM (gestiona les versions automàticament)
+    implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
+    // Firestore
+    implementation("com.google.firebase:firebase-firestore")
+    implementation("androidx.activity:activity-ktx:1.9.0")
+    implementation("androidx.fragment:fragment-ktx:1.8.0")
+
 }
