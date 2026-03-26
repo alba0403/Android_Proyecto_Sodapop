@@ -13,7 +13,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Estadístiques"
+            android:text="@string/estadistiques"
             android:textSize="28sp"
             android:textStyle="bold"
             android:layout_marginBottom="12dp"/>
@@ -26,12 +26,12 @@
             android:textSize="15sp"
             android:background="#E8F5E9"
             android:layout_marginBottom="16dp"
-            android:text="🌱 CO₂: calculant..."/>
+            android:text="@string/co_calculant"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Entrades a Les Meves Receptes"
+            android:text="@string/entrades_a_les_meves_receptes"
             android:textSize="16sp"
             android:textStyle="bold"/>
 
@@ -44,7 +44,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Receptes afegides vs eliminades"
+            android:text="@string/receptes_afegides_vs_eliminades"
             android:textSize="16sp"
             android:textStyle="bold"/>
 
@@ -57,7 +57,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Minuts d'ús acumulats"
+            android:text="@string/minuts_us_acumulats"
             android:textSize="16sp"
             android:textStyle="bold"/>
 

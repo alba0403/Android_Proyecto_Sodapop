@@ -40,7 +40,7 @@ class GraficsFragment : Fragment() {
             // CO2
             tvCO2.text = "🌱 Energia estimada: %.5f kg CO₂".format(estadistiquesVM.calcularCO2())
 
-            // BAR CHART — entrades al fragment LesMevesReceptes
+            // BAR CHART
             val barEntries = listOf(BarEntry(0f, dades.vegadesEntrada.toFloat()))
             val barDataSet = BarDataSet(barEntries, "Entrades").apply {
                 color = Color.parseColor("#F06292")
@@ -57,8 +57,7 @@ class GraficsFragment : Fragment() {
                 invalidate()
             }
 
-            // PIE CHART — receptes afegides vs eliminades
-            // Evitem crash si els dos valors son 0
+            // PIE CHART
             val afegides = dades.receptesAfegides.toFloat().coerceAtLeast(0.01f)
             val eliminades = dades.receptesEliminades.toFloat().coerceAtLeast(0.01f)
 
@@ -83,7 +82,7 @@ class GraficsFragment : Fragment() {
                 invalidate()
             }
 
-            // LINE CHART — minuts acumulats per sessió
+            // LINE CHART
             val numSessions = dades.vegadesEntrada.coerceAtLeast(1)
             val minutsPerSessio = dades.minutsUs / numSessions
             val lineEntries = (1..numSessions).map { i ->

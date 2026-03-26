@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,12 +16,15 @@ import kotlinx.coroutines.launch
 
 class LesMevesReceptesFragment : Fragment() {
 
+    private val estadistiquesVM: EstadistiquesViewModel by activityViewModels()
+
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: RecetaAdapter
     private lateinit var buscadorReceptes: EditText
     private lateinit var botonAñadir: Button
     private lateinit var botonEliminar: Button
 
+    private var recetaSeleccionada: Receta? = null
     private val mesMevesRecetas = mutableListOf<Receta>()
     private val todasLasRecetas = mutableListOf<Receta>() // llista completa per el filtre
 
@@ -86,6 +90,8 @@ class LesMevesReceptesFragment : Fragment() {
                             adapter.notifyItemInserted(mesMevesRecetas.size - 1)
                             buscadorReceptes.text.clear()
                             Toast.makeText(requireContext(), "Recepta afegida!", Toast.LENGTH_SHORT).show()
+
+                            estadistiquesVM.registrarReceptaAfegida()
                         }
                     } else {
                         Toast.makeText(requireContext(), "Error al afegir", Toast.LENGTH_SHORT).show()
@@ -103,11 +109,13 @@ class LesMevesReceptesFragment : Fragment() {
                 return@setOnClickListener
             }
 
+            estadistiquesVM.registrarReceptaEliminada()
+
             lifecycleScope.launch {
                 try {
                     val response = RetrofitReceta.API().eliminarRecepta(recetaSeleccionada!!.id)
                     if (response.isSuccessful) {
-                        todasLasRecetas.remove(recetaSeleccionada) // ← eliminar también de la lista completa
+                        todasLasRecetas.remove(recetaSeleccionada)
                         val index = mesMevesRecetas.indexOf(recetaSeleccionada)
                         mesMevesRecetas.removeAt(index)
                         recetaSeleccionada = null
@@ -123,7 +131,15 @@ class LesMevesReceptesFragment : Fragment() {
         }
     }
 
-    private var recetaSeleccionada: Receta? = null
+    override fun onResume() {
+        super.onResume()
+        estadistiquesVM.registrarEntrada()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        estadistiquesVM.registrarSortida()
+    }
 
     private fun cargarMisRecetas() {
         lifecycleScope.launch {
