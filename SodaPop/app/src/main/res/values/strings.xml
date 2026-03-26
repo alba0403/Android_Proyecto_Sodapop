@@ -59,4 +59,9 @@
     <string name="afegir">Afegir</string>
     <string name="eliminar">Eliminar</string>
     <string name="buscar_recepta">Buscar recepta...</string>
+    <string name="estadistiques">Estadístiques</string>
+    <string name="co_calculant">🌱 CO₂: calculant...</string>
+    <string name="entrades_a_les_meves_receptes">Entrades a Les Meves Receptes</string>
+    <string name="receptes_afegides_vs_eliminades">Receptes afegides vs eliminades</string>
+    <string name="minuts_us_acumulats">Minuts d\'ús acumulats</string>
 </resources>

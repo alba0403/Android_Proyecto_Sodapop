@@ -20,9 +20,6 @@
             android:name=".IniciarSessioActivity"
             android:exported="false" />
         <activity
-            android:name=".BotonsActivity"
-            android:exported="false" />
-        <activity
             android:name=".RegistrarActivity"
             android:exported="false" />
         <activity
