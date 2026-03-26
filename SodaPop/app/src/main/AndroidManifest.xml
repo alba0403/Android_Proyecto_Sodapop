@@ -14,25 +14,25 @@
         android:theme="@style/Theme.SodaPop">
 
         <activity
-            android:name=".ResultatsActivity"
+            android:name=".view.ResultatsActivity"
             android:exported="false" />
         <activity
-            android:name=".IniciarSessioActivity"
+            android:name=".view.IniciarSessioActivity"
             android:exported="false" />
         <activity
-            android:name=".RegistrarActivity"
+            android:name=".view.RegistrarActivity"
             android:exported="false" />
         <activity
-            android:name=".ViewReceptaActivity"
+            android:name=".view.ViewReceptaActivity"
             android:exported="false" />
         <activity
-            android:name=".BuscadorActivity"
+            android:name=".view.BuscadorActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".view.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.App.SplashScreen">
             <intent-filter>

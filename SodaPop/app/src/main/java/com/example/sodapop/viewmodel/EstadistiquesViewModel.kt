@@ -1,8 +1,10 @@
-package com.example.sodapop
+package com.example.sodapop.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.sodapop.model.EstadistiquesData
+import com.example.sodapop.repository.EstadistiquesRepository
 
 class EstadistiquesViewModel : ViewModel() {
 

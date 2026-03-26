@@ -1,8 +1,11 @@
-package com.example.sodapop
+package com.example.sodapop.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sodapop.R
+import com.example.sodapop.view.RecetaViewHolder
+import com.example.sodapop.model.Receta
 
 class RecetaAdapter(
     private val recetas: List<Receta>,

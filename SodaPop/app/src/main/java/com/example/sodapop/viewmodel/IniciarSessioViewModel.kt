@@ -1,4 +1,4 @@
-package com.example.sodapop
+package com.example.sodapop.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

@@ -1,17 +1,25 @@
-package com.example.sodapop
+package com.example.sodapop.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sodapop.services.NuevaRecetaRequest
+import com.example.sodapop.R
+import com.example.sodapop.model.Receta
+import com.example.sodapop.view.RecetaAdapter
+import com.example.sodapop.model.RetrofitReceta
+import com.example.sodapop.viewmodel.EstadistiquesViewModel
 import kotlinx.coroutines.launch
 
 class LesMevesReceptesFragment : Fragment() {
@@ -53,10 +61,10 @@ class LesMevesReceptesFragment : Fragment() {
         cargarMisRecetas()
 
         // FILTRO en tiempo real mientras escribes
-        buscadorReceptes.addTextChangedListener(object : android.text.TextWatcher {
+        buscadorReceptes.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun afterTextChanged(s: android.text.Editable?) {
+            override fun afterTextChanged(s: Editable?) {
                 val texto = s.toString().trim().lowercase()
                 mesMevesRecetas.clear()
                 if (texto.isEmpty()) {
@@ -82,7 +90,7 @@ class LesMevesReceptesFragment : Fragment() {
 
             lifecycleScope.launch {
                 try {
-                    val response = RetrofitReceta.API().crearRecepta(nuevaReceta)
+                    val response = RetrofitReceta.Companion.API().crearRecepta(nuevaReceta)
                     if (response.isSuccessful) {
                         response.body()?.let { creada ->
                             todasLasRecetas.add(creada)
@@ -113,7 +121,7 @@ class LesMevesReceptesFragment : Fragment() {
 
             lifecycleScope.launch {
                 try {
-                    val response = RetrofitReceta.API().eliminarRecepta(recetaSeleccionada!!.id)
+                    val response = RetrofitReceta.Companion.API().eliminarRecepta(recetaSeleccionada!!.id)
                     if (response.isSuccessful) {
                         todasLasRecetas.remove(recetaSeleccionada)
                         val index = mesMevesRecetas.indexOf(recetaSeleccionada)
@@ -144,7 +152,7 @@ class LesMevesReceptesFragment : Fragment() {
     private fun cargarMisRecetas() {
         lifecycleScope.launch {
             try {
-                val response = RetrofitReceta.API().llistaReceptes()
+                val response = RetrofitReceta.Companion.API().llistaReceptes()
                 if (response.isSuccessful) {
                     response.body()?.let { lista ->
                         todasLasRecetas.clear()

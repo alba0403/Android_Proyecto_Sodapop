@@ -1,8 +1,9 @@
-package com.example.sodapop
+package com.example.sodapop.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+
 /**
  * ViewModel per a la pantalla de Registre.
  * La seva feina és guardar les dades i fer les comprovacions (lògica)

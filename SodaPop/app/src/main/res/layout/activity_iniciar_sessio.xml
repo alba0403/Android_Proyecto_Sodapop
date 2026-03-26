@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/rosafondo"
-    tools:context=".IniciarSessioActivity">
+    tools:context=".view.IniciarSessioActivity">
 
     <ImageView
         android:id="@+id/backButton"

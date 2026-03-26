@@ -1,4 +1,4 @@
-package com.example.sodapop
+package com.example.sodapop.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,9 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.example.sodapop.view.HomeActivity
+import com.example.sodapop.R
+import com.example.sodapop.viewmodel.IniciarSessioViewModel
 
 /**
  * Activity d'Iniciar Sessió.
@@ -73,4 +76,3 @@ class IniciarSessioActivity : AppCompatActivity() {
         }
     }
 }
-

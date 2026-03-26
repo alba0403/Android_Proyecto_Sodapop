@@ -1,10 +1,12 @@
-package com.example.sodapop
+package com.example.sodapop.view
 
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.sodapop.R
+import com.example.sodapop.model.Receta
 
 class RecetaViewHolder(
     itemView: View,
