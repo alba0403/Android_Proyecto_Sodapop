@@ -1,15 +1,15 @@
-package com.example.sodapop
+package com.example.sodapop.view
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.splashscreen.SplashScreen
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.sodapop.view.HomeActivity
+import com.example.sodapop.view.IniciarSessioActivity
+import com.example.sodapop.R
+import com.example.sodapop.view.RegistrarActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

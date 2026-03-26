@@ -1,5 +1,6 @@
-package com.example.sodapop
+package com.example.sodapop.model
 
+import com.example.sodapop.services.RecetasService
 import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

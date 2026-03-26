@@ -1,18 +1,24 @@
-package com.example.sodapop
+package com.example.sodapop.view
 
-import GraficsFragment
+import com.example.sodapop.view.GraficsFragment
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sodapop.view.FragmentRebost
+import com.example.sodapop.view.LesMevesReceptesFragment
+import com.example.sodapop.view.PerfilFragment
+import com.example.sodapop.R
+import com.example.sodapop.model.Receta
+import com.example.sodapop.view.RecetaAdapter
+import com.example.sodapop.model.RetrofitReceta
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 
 class HomeActivity : AppCompatActivity() {
@@ -55,7 +61,7 @@ class HomeActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             try {
-                val response = RetrofitReceta.API().llistaReceptes()
+                val response = RetrofitReceta.Companion.API().llistaReceptes()
                 if (response.isSuccessful) {
                     response.body()?.let { lista ->
                         recetasRecomendadas.addAll(lista.take(3))

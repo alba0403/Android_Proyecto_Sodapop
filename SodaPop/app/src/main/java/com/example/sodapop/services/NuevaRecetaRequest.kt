@@ -1,4 +1,4 @@
-package com.example.sodapop
+package com.example.sodapop.services
 
 data class NuevaRecetaRequest(
     val nombre: String,

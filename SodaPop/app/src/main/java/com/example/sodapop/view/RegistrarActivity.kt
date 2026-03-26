@@ -1,4 +1,4 @@
-package com.example.sodapop
+package com.example.sodapop.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,9 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.example.sodapop.R
+import com.example.sodapop.viewmodel.RegistrarViewModel
+
 class RegistrarActivity : AppCompatActivity() {
 
     /**

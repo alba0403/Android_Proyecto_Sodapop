@@ -1,4 +1,4 @@
-package com.example.sodapop
+package com.example.sodapop.model
 
 data class Receta(
     val id: Long,

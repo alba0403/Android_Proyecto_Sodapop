@@ -1,5 +1,6 @@
-package com.example.sodapop
+package com.example.sodapop.repository
 
+import com.example.sodapop.model.EstadistiquesData
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
 

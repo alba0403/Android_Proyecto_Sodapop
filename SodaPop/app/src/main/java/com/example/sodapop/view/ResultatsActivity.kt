@@ -1,4 +1,4 @@
-package com.example.sodapop
+package com.example.sodapop.view
 
 import android.os.Bundle
 import android.widget.ImageView
@@ -7,6 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sodapop.R
+import com.example.sodapop.model.Receta
+import com.example.sodapop.view.RecetaAdapter
+import com.example.sodapop.model.RetrofitReceta
 import kotlinx.coroutines.launch
 
 class ResultatsActivity : AppCompatActivity() {
@@ -32,7 +36,7 @@ class ResultatsActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             try {
-                val response = RetrofitReceta.API().llistaReceptes()
+                val response = RetrofitReceta.Companion.API().llistaReceptes()
                 if (response.isSuccessful) {
                     response.body()?.let { lista ->
                         val filtradas = if (searchQuery.isEmpty()) {
