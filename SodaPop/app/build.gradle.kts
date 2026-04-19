@@ -68,5 +68,5 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore")
     implementation("androidx.activity:activity-ktx:1.9.0")
     implementation("androidx.fragment:fragment-ktx:1.8.0")
-
+    implementation("androidx.preference:preference-ktx:1.2.1")
 }
