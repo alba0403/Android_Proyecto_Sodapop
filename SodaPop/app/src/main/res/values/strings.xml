@@ -64,4 +64,6 @@
     <string name="entrades_a_les_meves_receptes">Entrades a Les Meves Receptes</string>
     <string name="receptes_afegides_vs_eliminades">Receptes afegides vs eliminades</string>
     <string name="minuts_us_acumulats">Minuts d\'ús acumulats</string>
+    <string name="micro">micro</string>
+    <string name="reconeixement_de_veu">Reconeixement de veu</string>
 </resources>
